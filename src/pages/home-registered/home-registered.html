@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- no-bounce: stuffs non scrollable -->
+<ion-content padding no-bounce>
+  <h2>Welcome
+    <span text-capitalize>{{ userData.name }} !</span>
+  </h2>
+  <!-- <h2>Welcome {{ userData.name | capitalize }} !</h2> -->
+  <p>Now you can click on "
+    <strong>My Account</strong>" tab and remove your account if you want to.</p>
+</ion-content>
+
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <!-- <p text-center>Today is {{ today | date: 'fullDate' }}</p> -->
+    <p text-center>Today is {{ today | date: 'medium' }}</p>
+  </ion-toolbar>
+</ion-footer>

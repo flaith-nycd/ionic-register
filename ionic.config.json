@@ -1,0 +1,8 @@
+{
+  "name": "register_v10",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

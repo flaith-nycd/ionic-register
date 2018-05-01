@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+  <!-- <ion-list-header>Follow us on Twitter</ion-list-header>
+    <ion-item>
+      <ion-icon name="ionic" item-start></ion-icon>
+      @dropbird
+    </ion-item> -->
+  <form [formGroup]="form" (ngSubmit)="sendMessage()">
+    <ion-list>
+      <ion-item margin-bottom>
+        <ion-label>Message:</ion-label>
+        <ion-textarea formControlName="message"></ion-textarea>
+      </ion-item>
+
+      <button ion-button color="primary" text-center block [disabled]="!form.valid">Send your message</button>
+    </ion-list>
+  </form>
+
+</ion-content>

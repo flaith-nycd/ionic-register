@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>NEW USER SIGNUP</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+  <form (submit)="doRegister()">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" name="name" [(ngModel)]="viewUser.name" placeholder="Username" autocomplete=name></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="email" name="email" [(ngModel)]="viewUser.email" placeholder="Email" autocomplete=email></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" name="password" [(ngModel)]="viewUser.password" placeholder="Password"></ion-input>
+      </ion-item>
+
+      <div>
+        <button ion-button color="primary" block>Sign in</button>
+      </div>
+    </ion-list>
+  </form>
+
+  <ion-card>
+  <!-- 
+    <ion-card-header>
+      Response
+    </ion-card-header> 
+  -->
+
+    <ion-card-content>
+      <b>{{ viewUser.response }}</b>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

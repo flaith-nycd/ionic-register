@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>List of users</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+<!--
+  <ul>
+    <li *ngFor="let user of users">{{ user.name }}</li>
+  </ul>
+ -->
+
+<!--
+  <ion-list>
+    <ion-item *ngFor="let user of users">{{ user.name }}</ion-item>
+  </ion-list>
+ -->
+  <ion-list>
+    <ion-list-header>
+      Users
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item>
+<!--
+        <ion-avatar item-start>
+          <img src="assets/img/venkman.jpg">
+        </ion-avatar>
+ -->
+        <h2>{{user.name}}</h2>
+        <p>{{user.email}}</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-start (click)="editUser(user)">
+          <ion-icon name="ios-more"></ion-icon>
+          More
+        </button>
+        <button ion-button color="primary" icon-start (click)="editUser(user)">
+          <ion-icon name="text"></ion-icon>
+          Edit
+        </button>
+        <button ion-button color="danger" icon-start (click)="deleteUser(user)">
+          <!-- <ion-icon name="call"></ion-icon> -->
+          <ion-icon name="warning"></ion-icon>
+          Del
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

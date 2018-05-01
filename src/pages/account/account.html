@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <!-- <ion-title>{{ userData.name | uppercase }}'s ACCOUNT</ion-title> -->
+      <ion-title><span text-capitalize>{{ userData.name }}</span>'s Account</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+    <div>
+      This is your token ID: {{ userData.unique_token }}
+      <button ion-button color="danger" block (click)="doDeleteUser()">Delete my account</button>
+    </div>
+</ion-content>
