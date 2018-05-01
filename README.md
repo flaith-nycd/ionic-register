@@ -1,6 +1,6 @@
 # Registering with IONIC
 
-Register to a website from an application in your smartphone
+Register to a website from an application in your smartphone using JWT _Json Web Token_
 
 Another try with IONIC :wink:
 
@@ -14,3 +14,17 @@ set PATH=%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;%JAVA_HOME%\b
 ```
 
 So I'm using _OpenJDK_
+
+For the testing IRL, I've build a website: http://test.sotfall.com made with Laravel
+
+### routes\api.php
+```php
+Route::middleware('api')->get('/all_users', 'UsersController@getAllUsers');
+
+Route::middleware('api')->get('/user_request', 'UsersController@index');
+Route::middleware('api')->post('/user_request', 'UsersController@store');
+Route::middleware('api')->delete('/user_request', 'UsersController@delete');
+
+// MESSAGES
+Route::middleware('api')->post('/send_message', 'MessageController@store');
+```
