@@ -270,6 +270,8 @@ class MessageController extends Controller
 
 </details>
 
+- - - -
+
 * BLADE
 
 <details><summary markdown="span"><code>ressources\views\welcome.blade.php</code></summary>
