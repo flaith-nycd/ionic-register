@@ -20,9 +20,9 @@ For the testing IRL, I've build a website: http://test.sotfall.com made with Lar
 
 ## Laravel parts
 
-You'll need to add CORS (Cross-Origin Resource Sharing) headers support in your Laravel application,
+You'll need to add CORS (Cross-Origin Resource Sharing) headers support in your Laravel application
 
-you should install [lavarel-cors from barryvdh](https://github.com/barryvdh/laravel-cors)
+To do so, you should install [lavarel-cors from barryvdh](https://github.com/barryvdh/laravel-cors)
 
 * PHP
 
