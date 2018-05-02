@@ -314,9 +314,7 @@ class MessageController extends Controller
 
 ```html
   <body>
-    <div class="col-md-6 col-md-offset-3 text-center">
-        <a class="btn btn-default" href="/">Home</a>
-    </div>
+    <a class="btn-primary" href="/">Home</a>
     <h1>Show users</h1>
 
     @if(count($users))
@@ -342,9 +340,7 @@ class MessageController extends Controller
 
 ```html
   <body>
-    <div class="col-md-6 col-md-offset-3 text-center">
-        <a class="btn btn-default" href="/">Home</a>
-    </div>
+    <a class="btn-primary" href="/">Home</a>
     <h1>Show message</h1>
 
     @if(count($message_list))
@@ -366,6 +362,105 @@ class MessageController extends Controller
         NO MESSAGES
     @endif
   </body>
+```
+
+</details>
+
+- - - -
+
+* EVENTS
+
+<details><summary markdown="span"><code>app\Events\MessageReceived.php</code></summary>
+
+```php
+namespace App\Events;
+
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+
+class MessageReceived
+{
+    use Dispatchable, InteractsWithSockets, SerializesModels;
+
+    /**
+     * Declare a user variable to be used by MessageListener
+     *
+     * public function handle(MessageReceived $event)
+     * {
+     *     $message = $event->user->name . ' just send a message.';
+     *     Log::info($message);
+     * }
+     */
+    public $user;
+
+    /**
+     * Create a new event instance.
+     *
+     * @return void
+     */
+    public function __construct($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * Get the channels the event should broadcast on.
+     *
+     * @return \Illuminate\Broadcasting\Channel|array
+     */
+    public function broadcastOn()
+    {
+        return new PrivateChannel('channel-name');
+    }
+}
+```
+
+</details>
+
+<details><summary markdown="span"><code>app\Listeners\MessageListener.php</code></summary>
+
+```php
+namespace App\Listeners;
+
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+
+// ADDED MessageReceived event: MANDATORY
+use App\Events\MessageReceived;
+// ADDED Log Facade to check in storage/laravel.log
+use Illuminate\Support\Facades\Log;
+
+class MessageListener
+{
+    /**
+     * Create the event listener.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Handle the event.
+     *
+     * @param  MessageReceived  $event
+     * @return void
+     */
+    public function handle(MessageReceived $event)
+    {
+        $message = $event->user->name . ' just send a message.';
+        Log::info($message);
+        // Inside event cannot redirect
+        //redirect()->route('show_message');
+    }
+}
 ```
 
 </details>
