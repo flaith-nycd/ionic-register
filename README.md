@@ -16,7 +16,25 @@ set PATH=%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;%JAVA_HOME%\b
 
 So I'm using _OpenJDK_
 
-For the testing IRL, I've build a website: http://test.sotfall.com made with Laravel
+For the testing IRL, I've build a website: [http://test.sotfall.com](http://test.sotfall.com) made with Laravel
+
+## Screenshots
+
+<p align="center">
+<img src="http://img.sotfall.com/ionic/register/Register_01.png" alt="Loading...">
+<img src="http://img.sotfall.com/ionic/register/Register_02.png" alt="home">
+<img src="http://img.sotfall.com/ionic/register/Register_03.png" alt="My account">
+</p>
+
+<p align="center">
+<img src="http://img.sotfall.com/ionic/register/Register_04.png" alt="Users not connected">
+<img src="http://img.sotfall.com/ionic/register/Register_05.png" alt="Users connected">
+<img src="http://img.sotfall.com/ionic/register/Register_06.png" alt="List of users">
+</p>
+
+<p align="center">
+<img src="http://img.sotfall.com/ionic/register/Register_07.png" alt="Send a message">
+</p>
 
 ## Laravel parts
 
@@ -93,7 +111,7 @@ class UsersController extends Controller
 /*
         if ($requestCount > 0) {
             dump($request);
-            echo "Request:"; 
+            echo "Request:";
             dump($request->request);
 
             foreach ($request->request as $key => $value) {
@@ -322,9 +340,9 @@ class MessageController extends Controller
     ------&nbsp;|&nbsp;---------&nbsp;|&nbsp;--------<br>
         @foreach($users as $user)
             {{ $user->name }}
-            &nbsp;|&nbsp; 
+            &nbsp;|&nbsp;
             {{ $user->email }}
-            &nbsp;|&nbsp; 
+            &nbsp;|&nbsp;
             {{ $user->unique_token }}
             <br>
         @endforeach
@@ -353,7 +371,7 @@ class MessageController extends Controller
         -->
         <!-- @if(!$message->read) -->
             {{ $message->subject }}
-            &nbsp;|&nbsp; 
+            &nbsp;|&nbsp;
             {{ $message->body }}
             <br>
         <!-- @endif -->
