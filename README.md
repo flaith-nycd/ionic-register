@@ -20,21 +20,11 @@ For the testing IRL, I've build a website: [http://test.sotfall.com](http://test
 
 ## Screenshots
 
-<p align="center">
-<img src="http://img.sotfall.com/ionic/register/Register_01.png" alt="Loading...">
-<img src="http://img.sotfall.com/ionic/register/Register_02.png" alt="home">
-<img src="http://img.sotfall.com/ionic/register/Register_03.png" alt="My account">
-</p>
-
-<p align="center">
-<img src="http://img.sotfall.com/ionic/register/Register_04.png" alt="Users not connected">
-<img src="http://img.sotfall.com/ionic/register/Register_05.png" alt="Users connected">
-<img src="http://img.sotfall.com/ionic/register/Register_06.png" alt="List of users">
-</p>
-
-<p align="center">
-<img src="http://img.sotfall.com/ionic/register/Register_07.png" alt="Send a message">
-</p>
+| | | |
+|:---:|:---:|:---:|
+|![Loading...](http://img.sotfall.com/ionic/register/Register_01.png)|![Home](http://img.sotfall.com/ionic/register/Register_02.png)|![My account](http://img.sotfall.com/ionic/register/Register_03.png)|
+|![User not connected](http://img.sotfall.com/ionic/register/Register_04.png)|![User connected](http://img.sotfall.com/ionic/register/Register_05.png)|![List of users](http://img.sotfall.com/ionic/register/Register_06.png)|
+| |![Send a message](http://img.sotfall.com/ionic/register/Register_07.png)| |
 
 ## Laravel parts
 
