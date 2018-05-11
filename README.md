@@ -8,7 +8,7 @@ Another try with IONIC :wink:
 
 Here is a copy of my `set_path_android_java.bat` file:
 
-```
+```bash
 set ANDROID_HOME=E:\Android\Sdk\
 set JAVA_HOME=C:\app\openjdk-1.8.0_x86_64
 set PATH=%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;%JAVA_HOME%\bin
